@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Main Patient Menu-->
+    <menuitem id="mate_main_menu_patient" name="Patient" groups="mate_hms_base.mate_group_hms_user"
+        sequence="20" web_icon="mate_hms_base,static/src/img/patient.png" />
+
+    <menuitem id="mate_action_main_menu_patient" name="Patient" action="mate_action_patient"
+        parent="mate_main_menu_patient" sequence="10" />
+
+    <!-- Patient Configuration Menu-->
+    <menuitem id="mate_menu_hms_patient_cofig" name="Configuration"
+        parent="mate_hms_base.mate_main_menu_patient" groups="mate_hms_base.mate_group_hms_manager"
+        sequence="100" />
+
+    <menuitem id="mate_menu_patient_tag" name="Patient Tags"
+        action="mate_hms_base.mate_act_open_patient_tag"
+        parent="mate_hms_base.mate_menu_hms_patient_cofig" sequence="15" />
+
+    <menuitem id="mate_menu_religion" name="Religion" action="mate_hms_base.mate_act_religion_view"
+        parent="mate_hms_base.mate_menu_hms_patient_cofig" sequence="20" />
+
+    <!--Main Physician -->
+    <menuitem id="mate_main_menu_physician" name="Physician"
+        groups="mate_hms_base.mate_group_hms_user"
+        sequence="20" web_icon="mate_hms_base,static/src/img/physician.png" />
+
+    <menuitem id="mate_action_menu_physician" sequence="0" parent="mate_main_menu_physician"
+        action="mate_action_physician" />
+
+    <menuitem id="mate_menu_physician_cofig" name="Configuration" parent="mate_main_menu_physician"
+        groups="mate_hms_base.mate_group_hms_manager" sequence="100" />
+
+    <menuitem id="mate_menu_physician_specialty" sequence="10" parent="mate_menu_physician_cofig"
+        action='mate_action_physician_specialty' />
+
+    <menuitem id="mate_menu_physician_degree" sequence="10" parent="mate_menu_physician_cofig"
+        action='mate_action_physician_degree' />
+
+    <!-- Main Services Menu -->
+    <menuitem id="mate_services_root" name="Services" sequence="25"
+        groups="mate_hms_base.mate_group_manage_services"
+        web_icon="mate_hms_base,static/src/img/services.png" />
+
+    <menuitem id="mate_menu_services" name="Services" parent="mate_services_root"
+        action="mate_product_template_action_services" />
+
+    <!-- Main Medicine Menu -->
+    <menuitem id="mate_medicine_root" name="Medicines" sequence="25"
+        groups="mate_hms_base.mate_group_manage_medicines"
+        web_icon="mate_hms_base,static/src/img/pills.png" />
+
+    <menuitem id="mate_menu_medicine" name="Medicines" parent="mate_medicine_root"
+        action="mate_product_template_action_medicines" />
+
+    <menuitem id="mate_menu_medicine_cofig" name="Configuration" parent="mate_medicine_root"
+        groups="mate_hms_base.mate_group_hms_user" sequence="100" />
+
+    <menuitem id="mate_menu_medicine_drug" name="Drug Form"
+        parent="mate_hms_base.mate_menu_medicine_cofig"
+        action="mate_hms_base.mate_act_open_drug_form_view" sequence="2" />
+
+    <menuitem id="mate_menu_medicine_product_active_component" name="Active Component"
+        parent="mate_hms_base.mate_menu_medicine_cofig" action="mate_act_open_active_comp"
+        sequence="5" />
+
+    <menuitem id="mate_menu_medicine_drug_company" name="Drug Company"
+        parent="mate_hms_base.mate_menu_medicine_cofig"
+        action="mate_act_open_drug_company_form_view" sequence="6" />
+
+    <menuitem id="mate_menu_therapeutic_effect" name="Therapeutic Effect"
+        parent="mate_hms_base.mate_menu_medicine_cofig" action="mate_act_open_therapeutic_effect"
+        sequence="7" />
+
+    <menuitem id="mate_menu_medicine_medicament_flavour" name="Medicament Flavour"
+        parent="mate_hms_base.mate_menu_medicine_cofig" action="mate_action_medicament_flavour"
+        sequence="9" />
+
+    <menuitem id="mate_menu_medicine_medicament_route" name="Medicament Route"
+        parent="mate_hms_base.mate_menu_medicine_cofig" action="mate_action_medicament_route"
+        sequence="10" />
+
+</odoo>
